@@ -1,5 +1,6 @@
-Steps to run the project :-
-    1. clone the repository
+**Steps to run the project** :- 
+
+    1. clone the repository 
     2. create a virtual environment and then activate the virtual environment. - optional step but advised 
     3. go to the project directory and then install all the requirements from the requirements.txt file
     4. now the project requirements is complete, to run project follow the below steps
