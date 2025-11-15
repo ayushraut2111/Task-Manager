@@ -6,6 +6,7 @@ from rest_framework.permissions import AllowAny
 from django.contrib.auth import authenticate, login, logout
 
 class AuthViewset(GenericViewSet):
+    serializer_class = UserAuthSerializer
     @action(detail=False,url_path='register',methods=['post'],permission_classes=[AllowAny])
     def register_user_api(self,request):
         data=request.data

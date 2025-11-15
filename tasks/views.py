@@ -3,8 +3,6 @@ from rest_framework.response import Response
 from tasks.models import Task
 from tasks.serializers import TaskSerializer
 from rest_framework.pagination import PageNumberPagination
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -24,7 +22,6 @@ class TaskApiView(APIView):
             queryset = queryset.filter(is_completed=True)
 
         return queryset
-
     def get(self, request, pk=None):
 
         if pk == None:
@@ -44,6 +41,7 @@ class TaskApiView(APIView):
         return Response({"data": serializer.data}, status=200)
 
     def post(self, request):
+
         data = request.data
 
         task_name = data.get("title", None)
@@ -57,6 +55,7 @@ class TaskApiView(APIView):
         task = serializer.save()
 
         return Response({"message": f"New Task is created by id {task.id}"}, status=200)
+
 
     def put(self, request, pk=None):
         if not pk:
