@@ -3,6 +3,9 @@ from rest_framework.response import Response
 from tasks.models import Task
 from tasks.serializers import TaskSerializer
 from rest_framework.pagination import PageNumberPagination
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
+
 
 
 class TaskApiView(APIView):
