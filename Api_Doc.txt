@@ -1,0 +1,110 @@
+First you need to register and then login to use the post and update apis
+
+User Api’s
+
+1. Register User
+
+Method: POST
+Endpoint: users/user/register
+
+Request Body
+{
+    "username": "ayush13",
+    "password": "Ayush@123"
+}
+
+2. Login User
+
+Method: POST
+Endpoint: users/user/login
+
+Request Body
+{
+    "username": "ayush13",
+    "password": "Ayush@123"
+}
+
+3. Logout User
+
+Method: POST
+Endpoint: users/user/logout
+
+Task APIs
+
+1. Create a Task
+
+Method: POST
+Endpoint: tasks/task/
+
+Request Body
+{
+    "title": "task ayush",
+    "description": "hello"
+}
+
+2. Get a Particular Task
+
+Method: GET
+Endpoint: tasks/task/{task_id}
+
+Response Example
+{
+    "data": {
+        "id": "1d808269-0379-43cf-b31e-67d99e43c9be",
+        "title": "task 2",
+        "is_completed": false,
+        "description": ""
+    }
+}
+
+3. Get All Tasks
+
+Method: GET
+Endpoint: tasks/task/
+
+Response Example
+{
+    "count": 3,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": "1d808269-0379-43cf-b31e-67d99e43c9be",
+            "title": "task 2",
+            "is_completed": false,
+            "description": ""
+        },
+        {
+            "id": "b7514b51-388b-4caa-9353-d09a4975a392",
+            "title": "task ayush",
+            "is_completed": false,
+            "description": "hello"
+        },
+        {
+            "id": "f6b69d54-512b-4a31-b417-23c03279a1a6",
+            "title": "task ayush",
+            "is_completed": false,
+            "description": "hello"
+        }
+    ]
+}
+
+4. Update a Task
+
+Method: PUT or PATCH
+Endpoint: tasks/task/{task_id}
+
+Request Body (example)
+{
+    "is_completed": true
+}
+
+5. Delete a Task
+
+Method: DELETE
+Endpoint: tasks/task/{task_id}
+
+
+Swagger ui 
+To open swagger ui run the server and then go to the swagger endpoint
+Endpoint - /swagger/
